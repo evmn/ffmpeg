@@ -9,15 +9,27 @@ done
 ```
 
 
-## Convert flac to mp3, save metadata
+
+
+
+## Save metadata from flac file
 
 
 ```sh
-#/bin/bash
-
 for fullName in *.flac;do
 	fileName=$(echo $fullName | cut -d . -f1)
 	ffmpeg -i "$fullName"  -f ffmetadata "$fileName".txt
-	ffmpeg -i "$fullName"  -f ffmetadata -i "$fileName".txt -codec:a libmp3lame -b:a 320k "$fileName".mp3
+done
+```
+
+
+
+
+## Add metadata to mp3 from file
+
+```sh
+for fullName in *.mp3;do
+	fileName=$(echo $fullName | cut -d . -f1)
+	ffmpeg -i "$fullName"  -f ffmetadata -i "$fileName".txt  -c copy -map_metadata 1 -acodec copy release/"$fullName"
 done
 ```
