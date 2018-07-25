@@ -56,7 +56,8 @@ ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
 
 命令三裁剪1分钟到2分钟之间的内容，快速定位。
 
-**If you cut with stream copy (-c copy) you need to use the -avoid_negative_ts 1 option if you want to use that segment with the concat demuxer . **
+>If you cut with stream copy (-c copy) you need to use the -avoid_negative_ts 1 option if you want to use that segment with the concat demuxer.
+
 
 
 ```sh
@@ -79,8 +80,20 @@ ffmpeg -i input.mp4  -f ffmetadata metadata.txt
 ffmpeg -i input.mp4 -f ffmetadata -i metadata.txt  -c copy -map_metadata 1  -codec copy output.mp4
 ```
 
+其中metadata中的关键字可以参考：
 
-我发现修改`year`后，并没有变化，不知道什么情况！
+
+```
+;FFMETADATA1
+title=
+album=
+artist=
+date=
+comment=
+```
+
+
+注意：此处year的关键字是date。
 
 
 
@@ -90,4 +103,4 @@ ffmpeg -i input.mp4 -f ffmetadata -i metadata.txt  -c copy -map_metadata 1  -cod
 
  - [FFmpeg:seeking](http://trac.ffmpeg.org/wiki/Seeking)
  - CSDN:[ffmpeg视频精准剪切](https://blog.csdn.net/matrix_laboratory/article/details/53157383)
-
+ - [adding metadata to mp4 video](https://kdenlive.org/en/project/adding-meta-data-to-mp4-video/)
