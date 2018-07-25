@@ -5,10 +5,10 @@
 ## 裁剪视频
 
 ```sh
-ffmpeg -ss 10 -t 15 -accurate_seek -i test.mp4 -codec copy -avoid_negative_ts 1 cut.mp4
+ffmpeg -ss 10 -to 15 -accurate_seek -i test.mp4 -codec copy -avoid_negative_ts 1 cut.mp4
 ```
 
-我裁剪后发现时间总是不对，不知道什么情况。
+从第10秒开始裁剪，到25秒结束。
 
 ## 修改metadata信息
 
