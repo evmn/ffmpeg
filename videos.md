@@ -64,6 +64,14 @@ ffmpeg -ss 00:01:00 -i video.mp4 -to 00:02:00 -c copy -copyts cut.mp4
 ffmpeg -ss 00:03:00 -i video.mp4 -t 60 -c copy -avoid_negative_ts 1 cut.mp4
 ```
 
+## 裁剪视频尺寸
+
+例如我们要把一个3840x2160裁剪为1：1的视频，以原视频左上角为起点向右100像素，向下200像素处开始裁剪1980像素的正方形块，可以使用下面的命令。
+
+
+```sh
+ffmpeg -i input.mp4 -vf crop=1980:1980:100:200  -strict -2 output.mp4
+```
 
 
 ## 修改metadata信息
