@@ -1,0 +1,31 @@
+;FFMETADATA1
+major_brand=avc1
+minor_version=0
+compatible_brands=avc1mp42
+encoder=Lavf58.29.100
+title=samples
+artists=someone
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=300000
+END=2099999
+title=Chapter 1
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=2100000
+END=3299999
+title=Chapter 2
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=3300000
+END=5602999
+title=Chapter 3
+
+[CHAPTER]
+TIMEBASE=1/1000
+START=5603000
+END=6649999
+title=Chapter 4
