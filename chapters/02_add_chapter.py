@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 import re
 
 chapters = list()
 
 with open('chapters.txt', 'r') as f:
    for line in f:
-      x = re.match(r"(\d):(\d{2}):(\d{2}) (.*)", line)
+      x = re.match(r"(\d+):(\d{2}):(\d{2}) (.*)", line)
       hrs = int(x.group(1))
       mins = int(x.group(2))
       secs = int(x.group(3))
